@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF4F7"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    >
+    <illuminometer.com.example.android.mytestble.view.tempcontrolview.TempControlView
+       android:id="@+id/temp_control"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:background="#ECF4F7"/>
+
+</RelativeLayout>

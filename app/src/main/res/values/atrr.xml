@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="liquid_color" format="color"/>
+    <attr name="crust_color" format="color"/>
+    <attr name="crust_width" format="dimension"/>
+    <attr name="crust_height" format="dimension"/>
+    <attr name="init_temperature" format="dimension"/>
+
+    <declare-styleable name="MyThermometer">
+        <attr name="liquid_color"/>
+        <attr name="crust_color"/>
+        <attr name="crust_width"/>
+        <attr name="crust_height"/>
+        <attr name="init_temperature"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,1 @@
+include ':app', ':sample', ':library', 'app1', 'example', 'app2', 'librarytitanic', 'sampletitanic', ':libmune', ':appmune', ':librarychart', ':samplebutton', ':demo', ':libraryswiper', ':sampleRecyc', ':base-adapter-library', ':baseadapter-recyclerview'

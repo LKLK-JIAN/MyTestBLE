@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyTestBLE.iml" filepath="$PROJECT_DIR$/MyTestBLE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app1/app1.iml" filepath="$PROJECT_DIR$/app1/app1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app2/app2.iml" filepath="$PROJECT_DIR$/app2/app2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appmune/appmune.iml" filepath="$PROJECT_DIR$/appmune/appmune.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-adapter-library/base-adapter-library.iml" filepath="$PROJECT_DIR$/base-adapter-library/base-adapter-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baseadapter-recyclerview/baseadapter-recyclerview.iml" filepath="$PROJECT_DIR$/baseadapter-recyclerview/baseadapter-recyclerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libmune/libmune.iml" filepath="$PROJECT_DIR$/libmune/libmune.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/librarychart/librarychart.iml" filepath="$PROJECT_DIR$/librarychart/librarychart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraryswiper/libraryswiper.iml" filepath="$PROJECT_DIR$/libraryswiper/libraryswiper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/librarytitanic/librarytitanic.iml" filepath="$PROJECT_DIR$/librarytitanic/librarytitanic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sampleRecyc/sampleRecyc.iml" filepath="$PROJECT_DIR$/sampleRecyc/sampleRecyc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/samplebutton/samplebutton.iml" filepath="$PROJECT_DIR$/samplebutton/samplebutton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sampletitanic/sampletitanic.iml" filepath="$PROJECT_DIR$/sampletitanic/sampletitanic.iml" />
+    </modules>
+  </component>
+</project>
