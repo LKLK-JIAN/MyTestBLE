@@ -27,28 +27,7 @@
             <option value="$PROJECT_DIR$/sampletitanic" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/app1" />
-            <option value="$PROJECT_DIR$/app2" />
-            <option value="$PROJECT_DIR$/appmune" />
-            <option value="$PROJECT_DIR$/base-adapter-library" />
-            <option value="$PROJECT_DIR$/baseadapter-recyclerview" />
-            <option value="$PROJECT_DIR$/demo" />
-            <option value="$PROJECT_DIR$/example" />
-            <option value="$PROJECT_DIR$/libmune" />
-            <option value="$PROJECT_DIR$/library" />
-            <option value="$PROJECT_DIR$/librarychart" />
-            <option value="$PROJECT_DIR$/libraryswiper" />
-            <option value="$PROJECT_DIR$/librarytitanic" />
-            <option value="$PROJECT_DIR$/sample" />
-            <option value="$PROJECT_DIR$/sampleRecyc" />
-            <option value="$PROJECT_DIR$/samplebutton" />
-            <option value="$PROJECT_DIR$/sampletitanic" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
