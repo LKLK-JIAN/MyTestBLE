@@ -1,36 +1,42 @@
 package illuminometer.com.example.android.mytestble.adapter;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
-import android.os.Handler;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import illuminometer.com.example.android.mytestble.R;
 import illuminometer.com.example.android.mytestble.holder.PhotoViewHolder;
+import illuminometer.com.example.android.mytestble.photoActivity;
 
 /**
  * Created by android on 2017/11/18.
  */
 public class MylistphoteAdapter extends BaseAdapter implements AbsListView.OnScrollListener{
+    int start;
+    int end;
+    boolean isFirst;
     ArrayList names = null;
     ArrayList descs= null;
     ArrayList fileNames = null;
+    ImageLoader imageLoader;
     Context context;
     PhotoViewHolder holder;
 
-    public MylistphoteAdapter(Context context, ArrayList names, ArrayList fileNames) {
+    public MylistphoteAdapter(Context context, ArrayList names, ArrayList fileNames, ListView listview) {
         this.context=context;
         this.names = names;
         this.fileNames = fileNames;
+        listview.setOnScrollListener(this);
+        imageLoader=new ImageLoader(listview);
+        isFirst=true;
     }
 
     @Override
@@ -66,26 +72,13 @@ public class MylistphoteAdapter extends BaseAdapter implements AbsListView.OnScr
         else{
            holder.name.setText(names.get(position).toString()+" ");
        }
-
-        final View finalConvertView = convertView;
-        final Handler handler=new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                ImageView image = (ImageView) finalConvertView.findViewById(R.id.desc);
-                image.setImageBitmap(BitmapFactory.decodeFile((String) fileNames.get(position)));
-            }
-        };
-
-        Thread thread=new Thread(new Runnable() {
-            @Override
-            public void run() {
-                 Message message=new Message();
-                 message.arg1=position;
-                 handler.sendEmptyMessage(00);
-            }
-        });
-        thread.start();
-
+       holder.desc.setImageResource(R.mipmap.ic_launcher);
+       holder.desc.setTag(photoActivity.fileNames.get(position));
+       //imageLoader.showImageByAsyncTask(holder.desc,(String)photoActivity.fileNames.get(position));
+//        final View finalConvertView = convertView;
+//        ImageView image = (ImageView) finalConvertView.findViewById(R.id.desc);
+//
+//        image.setImageBitmap(BitmapFactory.decodeFile((String) fileNames.get(position)));
         return convertView;
     }
 
@@ -93,12 +86,20 @@ public class MylistphoteAdapter extends BaseAdapter implements AbsListView.OnScr
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
         if(scrollState==SCROLL_STATE_FLING){
+           imageLoader.loadImage(start,end);
+        }
+        else{
 
         }
     }
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
+      start=firstVisibleItem;
+      end=visibleItemCount+firstVisibleItem;
+        if(isFirst && visibleItemCount > 0){//第一次加载的时候调用，显示图片
+            imageLoader.loadImage(start,end);
+            isFirst=false;
+        }
     }
 }

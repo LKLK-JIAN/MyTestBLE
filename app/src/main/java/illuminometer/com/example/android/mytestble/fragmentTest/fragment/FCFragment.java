@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ public class FCFragment extends Fragment implements SwipeRefreshLayout.OnRefresh
     private ArrayList<String> getData() {
         ArrayList<String> data = new ArrayList<>();
         String temp = " item";
-        for(int i = 1; i < 100; i++) {
+        for(int i = 1; i < 10000; i++) {
             data.add( i+ temp);
         }
         return data;
@@ -48,7 +49,8 @@ public class FCFragment extends Fragment implements SwipeRefreshLayout.OnRefresh
 
     @Override
     public void onRefresh() {
-      sreLayout.setRefreshing(false);
+        Log.e("TAG", "onRefresh: "+11111 );
+        sreLayout.setRefreshing(false);
     }
 
 

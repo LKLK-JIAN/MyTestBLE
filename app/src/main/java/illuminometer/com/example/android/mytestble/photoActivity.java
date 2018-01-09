@@ -62,7 +62,7 @@ public class photoActivity extends AppCompatActivity {
                     map.put("desc", descs.get(i));
                     listItems.add(map);
                 }
-                MylistphoteAdapter adapter=new MylistphoteAdapter(photoActivity.this,names,fileNames);
+                MylistphoteAdapter adapter=new MylistphoteAdapter(photoActivity.this,names,fileNames,show_list);
                 show_list.setAdapter(adapter);
 
                 //设置adapter
