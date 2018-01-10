@@ -10,11 +10,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 import illuminometer.com.example.android.mytestble.R;
 import illuminometer.com.example.android.mytestble.holder.PhotoViewHolder;
-import illuminometer.com.example.android.mytestble.photoActivity;
 
 /**
  * Created by android on 2017/11/18.
@@ -30,9 +31,10 @@ public class MylistphoteAdapter extends BaseAdapter implements AbsListView.OnScr
     Context context;
     PhotoViewHolder holder;
 
-    public MylistphoteAdapter(Context context, ArrayList names, ArrayList fileNames, ListView listview) {
+    public MylistphoteAdapter(Context context, ArrayList names,ArrayList descs, ArrayList fileNames, ListView listview) {
         this.context=context;
         this.names = names;
+        this.descs=descs;
         this.fileNames = fileNames;
         listview.setOnScrollListener(this);
         imageLoader=new ImageLoader(listview);
@@ -73,7 +75,8 @@ public class MylistphoteAdapter extends BaseAdapter implements AbsListView.OnScr
            holder.name.setText(names.get(position).toString()+" ");
        }
        holder.desc.setImageResource(R.mipmap.ic_launcher);
-       holder.desc.setTag(photoActivity.fileNames.get(position));
+       //holder.desc.setTag(photoActivity.fileNames.get(position));
+        Glide.with(context).load(fileNames.get(position)).into(holder.desc);
        //imageLoader.showImageByAsyncTask(holder.desc,(String)photoActivity.fileNames.get(position));
 //        final View finalConvertView = convertView;
 //        ImageView image = (ImageView) finalConvertView.findViewById(R.id.desc);
@@ -85,21 +88,21 @@ public class MylistphoteAdapter extends BaseAdapter implements AbsListView.OnScr
 
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
-        if(scrollState==SCROLL_STATE_FLING){
-           imageLoader.loadImage(start,end);
-        }
-        else{
-
-        }
+//        if(scrollState==SCROLL_STATE_FLING){
+//           imageLoader.loadImage(start,end);
+//        }
+//        else{
+//
+//        }
     }
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-      start=firstVisibleItem;
-      end=visibleItemCount+firstVisibleItem;
-        if(isFirst && visibleItemCount > 0){//第一次加载的时候调用，显示图片
-            imageLoader.loadImage(start,end);
-            isFirst=false;
-        }
+//      start=firstVisibleItem;
+//      end=visibleItemCount+firstVisibleItem;
+//        if(isFirst && visibleItemCount > 0){//第一次加载的时候调用，显示图片
+//            imageLoader.loadImage(start,end);
+//            isFirst=false;
+//        }
     }
 }

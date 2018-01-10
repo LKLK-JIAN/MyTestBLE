@@ -49,8 +49,9 @@ public class photoActivity extends AppCompatActivity {
                     String name = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DISPLAY_NAME));
                     //获取图片的生成日期
                     byte[] data = cursor.getBlob(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+                    String desc = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
                     //获取图片的详细信息
-                    String desc = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DESCRIPTION));
+                   // String desc = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DESCRIPTION));
                     names.add(name);
                     descs.add(desc);
                     fileNames.add(new String(data, 0, data.length - 1));
@@ -62,7 +63,7 @@ public class photoActivity extends AppCompatActivity {
                     map.put("desc", descs.get(i));
                     listItems.add(map);
                 }
-                MylistphoteAdapter adapter=new MylistphoteAdapter(photoActivity.this,names,fileNames,show_list);
+                MylistphoteAdapter adapter=new MylistphoteAdapter(photoActivity.this,names,descs,fileNames,show_list);
                 show_list.setAdapter(adapter);
 
                 //设置adapter
