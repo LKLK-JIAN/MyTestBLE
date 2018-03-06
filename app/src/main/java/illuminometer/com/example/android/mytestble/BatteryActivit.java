@@ -52,6 +52,8 @@ public class BatteryActivit extends AppCompatActivity {
             int total=intent.getExtras().getInt("scale");//获得总电量
             int percent=current*100/total;
             System.out.print("0");
+            System.out.print("0");
+            System.out.print("0");
             //batterytv.setText("现在的电量是"+percent+"%。");
             batterytv.setText("现在的电量是"+percent+"%。");
         }
@@ -63,6 +65,7 @@ public class BatteryActivit extends AppCompatActivity {
            int current=intent.getExtras().getInt("level");//获得当前电量
            int total=intent.getExtras().getInt("scale");//获得总电量
            int percent=current*100/total;
+
            batterytv.setText("现在的电量是"+percent+"%。");
        }
    };
