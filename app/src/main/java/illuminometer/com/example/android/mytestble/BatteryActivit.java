@@ -16,7 +16,7 @@ import android.widget.ToggleButton;
 public class BatteryActivit extends AppCompatActivity {
     private ToggleButton tb;
     private TextView batterytv;
-    private BatteryReceiver receiver=null;
+   // private BatteryReceiver receiver=null;
      AlarmManager alermmanager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,22 +28,23 @@ public class BatteryActivit extends AppCompatActivity {
         Intent intent=new Intent(this,AlarmReceiver.class);
         PendingIntent pendingintent=PendingIntent.getBroadcast(this,0,intent,0);
         alermmanager.set(AlarmManager.RTC_WAKEUP,1000,pendingintent);
-        receiver=new BatteryReceiver();
+        //receiver=new BatteryReceiver();
         tb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     IntentFilter filter=new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-                    registerReceiver(receiver, filter);//注册BroadcastReceiver
+                    registerReceiver(broadcastReceiver, filter);//注册BroadcastReceiver
                 }
                 else{
                     //停止获取电池电量
-                    unregisterReceiver(receiver);
+                    unregisterReceiver(broadcastReceiver);
                     batterytv.setText(null);
                 }
             }
         });
    }
+
     private class BatteryReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -55,6 +56,22 @@ public class BatteryActivit extends AppCompatActivity {
             batterytv.setText("现在的电量是"+percent+"%。");
         }
     }
+
+   BroadcastReceiver  broadcastReceiver=new BroadcastReceiver() {
+       @Override
+       public void onReceive(Context context, Intent intent) {
+           int current=intent.getExtras().getInt("level");//获得当前电量
+           int total=intent.getExtras().getInt("scale");//获得总电量
+           int percent=current*100/total;
+           batterytv.setText("现在的电量是"+percent+"%。");
+       }
+   };
+//    private class BatteryReceiver extends BroadcastReceiver {
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//
+//        }
+//    }
     private class AlarmReceiver extends BroadcastReceiver{
         @Override
         public void onReceive(Context context, Intent intent) {
